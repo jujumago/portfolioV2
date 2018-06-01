@@ -1,0 +1,198 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	background-color: #f7fdff;
+	color: #454343;
+	font-family: 'Amatic SC', cursive;
+}
+
+#colorWhite{
+	position: relative;
+	background-color: #fafcff;
+	height: 99%;
+	width: 100%;
+	z-index: 2;
+	margin: 0;
+	padding: 0;
+}
+
+#titleRow{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
+#titleColumn{
+	position: fixed;
+	top: 45%;
+	left: 50%;
+	transform: translateY(-50%);
+	transform: translateX(-50%);
+	height: 100px;
+	width: 100%;
+	transition: all 1s;
+	z-index: 3;
+}
+
+#btnControl{
+	display: none;
+}
+
+#btnControl:checked + #titleColumn{
+	display: none;
+	transition-duration: 5s;	
+}
+
+#btnControl:checked + #titleColumn + #colorWhite{
+	display: none;
+}
+
+#titleLogo{
+	position: absolute;
+	height: 100px;
+	width: 100px;
+	left: 50%;
+	transform: translateX(-50%);
+	transition-duration: 0.5s;
+	transition-delay: 0.5s;
+	margin-left: 30px;
+}
+
+#titleText{
+	position: absolute;
+	left: 50%;
+	top: 10%;
+	transform: translateY(-50%);
+	transform: translateX(-50%);
+	font-size: 4rem;
+	transition-delay: 0;
+	transition-duration: 0.5s;
+	opacity: 0;
+}
+
+#titleColumn:hover #titleLogo{
+	transform: translateX(170px);
+	transition-duration: 0.3s;
+	transition-delay: 0;
+}
+
+#titleColumn:hover #titleText{
+	opacity: 1;
+	transition-delay: 1s;
+	transition-duration: 0.5s;
+}
+
+/*Main Page*/
+
+#pageContainer{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+#header,
+#navLogo2Container{
+	height: 15vh;
+}
+
+#navName{
+	display: inline-block;
+	margin-top: 10px;
+}
+
+#navLogo{
+	height: 80px;
+	width: 80px;
+	margin-left: 20px;
+	transform: translateY(-15px);
+}
+
+#navLogo2Container{
+	text-align: right;
+	padding-top: 9px; 
+}
+
+#navLogo2{
+	height: 80px;
+	width: 80px;
+	margin-left: 20px;
+	display: inline-block;
+	transform: translateX(180px);
+	transition-duration: 0.5s;
+	transition-delay: 0.5s;
+}
+
+.fa-3x{
+	margin-left: 20px;
+	margin-top: 20px;
+	transform: translateY(10px);
+	transition-delay: 0;
+	transition-duration: 0.5s;
+	opacity: 0;
+}
+
+#navLogo2Container:hover #navLogo2{
+	transform: translateX(0);
+	transition-duration: 0.3s;
+	transition-delay: 0;
+}
+
+#navLogo2Container:hover .fa-3x{
+	opacity: 1;
+	transition-duration: 0.5s;
+	transition-delay: 1s;
+}
+
+.carouselControlLogo{
+	height: 50px;
+	width: 50px;
+}
+
+
+.slideContainer{
+	width: 75%;
+	height: 85vh;
+}
+
+/*first slide*/
+
+#myPhoto{
+	width: 100%;
+	height: 60%;
+	object-fit: none;
+	object-position: 50% 0;
+}
+
+.slideSubContainer{
+	justify-content: center;
+	flex-direction: column;
+	display: flex;
+	text-align: center;
+}
+
+ul{
+	list-style-type: none;
+}
+
+h2{
+	text-align: center;
+}
+
+h2 + h3{
+	text-align: right;
+	margin-right: 30%;
+}
+
+.carouselQuote{
+	height: 30%;
+}
+
+li{
+	font-size: 2vw;
+}
+
+#imgContainer{
+	border-radius: 10vw;
+}
