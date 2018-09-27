@@ -1,198 +1,349 @@
 *{
-	padding: 0;
 	margin: 0;
+	padding: 0;
 	box-sizing: border-box;
-	background-color: #f7fdff;
-	color: #454343;
-	font-family: 'Amatic SC', cursive;
+	font-family: 'Raleway', sans-serif;
 }
 
-#colorWhite{
-	position: relative;
-	background-color: #fafcff;
-	height: 99%;
-	width: 100%;
-	z-index: 2;
-	margin: 0;
-	padding: 0;
-}
-
-#titleRow{
-	position: absolute;
-	height: 100%;
-	width: 100%;
-}
-
-#titleColumn{
-	position: fixed;
-	top: 45%;
-	left: 50%;
-	transform: translateY(-50%);
-	transform: translateX(-50%);
-	height: 100px;
-	width: 100%;
-	transition: all 1s;
-	z-index: 3;
-}
-
-#btnControl{
-	display: none;
-}
-
-#btnControl:checked + #titleColumn{
-	display: none;
-	transition-duration: 5s;	
-}
-
-#btnControl:checked + #titleColumn + #colorWhite{
-	display: none;
-}
-
-#titleLogo{
-	position: absolute;
-	height: 100px;
-	width: 100px;
-	left: 50%;
-	transform: translateX(-50%);
-	transition-duration: 0.5s;
-	transition-delay: 0.5s;
-	margin-left: 30px;
-}
-
-#titleText{
-	position: absolute;
-	left: 50%;
-	top: 10%;
-	transform: translateY(-50%);
-	transform: translateX(-50%);
-	font-size: 4rem;
-	transition-delay: 0;
-	transition-duration: 0.5s;
-	opacity: 0;
-}
-
-#titleColumn:hover #titleLogo{
-	transform: translateX(170px);
-	transition-duration: 0.3s;
-	transition-delay: 0;
-}
-
-#titleColumn:hover #titleText{
-	opacity: 1;
-	transition-delay: 1s;
-	transition-duration: 0.5s;
-}
-
-/*Main Page*/
-
-#pageContainer{
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 1;
-}
-
-#header,
-#navLogo2Container{
-	height: 15vh;
-}
-
-#navName{
-	display: inline-block;
-	margin-top: 10px;
-}
-
-#navLogo{
-	height: 80px;
-	width: 80px;
-	margin-left: 20px;
-	transform: translateY(-15px);
-}
-
-#navLogo2Container{
-	text-align: right;
-	padding-top: 9px; 
-}
-
-#navLogo2{
-	height: 80px;
-	width: 80px;
-	margin-left: 20px;
-	display: inline-block;
-	transform: translateX(180px);
-	transition-duration: 0.5s;
-	transition-delay: 0.5s;
-}
-
-.fa-3x{
-	margin-left: 20px;
-	margin-top: 20px;
-	transform: translateY(10px);
-	transition-delay: 0;
-	transition-duration: 0.5s;
-	opacity: 0;
-}
-
-#navLogo2Container:hover #navLogo2{
-	transform: translateX(0);
-	transition-duration: 0.3s;
-	transition-delay: 0;
-}
-
-#navLogo2Container:hover .fa-3x{
-	opacity: 1;
-	transition-duration: 0.5s;
-	transition-delay: 1s;
-}
-
-.carouselControlLogo{
-	height: 50px;
-	width: 50px;
-}
-
-
-.slideContainer{
-	width: 75%;
-	height: 85vh;
-}
-
-/*first slide*/
-
-#myPhoto{
-	width: 100%;
-	height: 60%;
-	object-fit: none;
-	object-position: 50% 0;
-}
-
-.slideSubContainer{
-	justify-content: center;
-	flex-direction: column;
-	display: flex;
-	text-align: center;
-}
-
-ul{
-	list-style-type: none;
-}
-
-h2{
-	text-align: center;
-}
-
-h2 + h3{
-	text-align: right;
-	margin-right: 30%;
-}
-
-.carouselQuote{
-	height: 30%;
+html, body{
+	max-width: 100%;
+	overflow-x: hidden;
 }
 
 li{
-	font-size: 2vw;
+	list-style: none;
+	margin-bottom: 10px;
 }
 
-#imgContainer{
-	border-radius: 10vw;
+.mainCont{
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+	position: relative;
+	z-index: 0;
+	background-color: black;
+}
+
+.welcomeDiv{
+	height: 100vh;
+	width: 100vw;
+	background-image: url("../images/welcomeBG2.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	display: block;
+	transition-duration: 0.5s;
+	opacity: 1;
+	z-index: 1;
+}
+
+.aboutMeDiv{
+	height: 100vh;
+	width: 100vw;
+	background-image: url("../images/aboutMeBG.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	display: none;
+	opacity: 0;
+	transition-duration: 0.5s;
+	position: relative;
+}
+
+.bioDataDiv{
+	height: 100vh;
+	width: 100vw;
+	background-image: url("../images/resumeBG.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	display: none;
+	opacity: 0;
+	transition-duration: 0.5s;
+	position: relative;
+}
+
+.skillsDiv{
+	height: 100vh;
+	width: 100vw;
+	background-image: url("../images/skillsBG.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	display: none;
+	opacity: 0;
+	transition-duration: 0.5s;
+	position: relative;
+}
+
+.portfolioDiv{
+	height: 100vh;
+	width: 100vw;
+	background-image: url("../images/portfolioBG.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	display: none;
+	opacity: 0;
+	transition-duration: 0.5s;
+	position: relative;
+}
+
+.titleCont{
+	position: absolute;
+	top: 55%;
+	right: 5%;
+	transform: translateY(-25%);
+}
+
+.title{
+	color: white;
+	font-family: 'Raleway', sans-serif;
+	border-bottom: 1px white solid;
+	border-top: 1px white solid;
+}
+
+.subTitle{
+	font-family: 'Raleway', sans-serif;
+	color: white;
+}
+
+.socLinks{
+	color: grey;
+	letter-spacing: 1vw;
+}
+
+.myPic{
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+	border: 5px white solid;
+	margin: auto;
+	margin-bottom: 20px;
+	transform: translateX(0%);
+
+}
+
+.bioDivs{
+	position: absolute;
+	color: white;
+}
+
+.bioIcons{
+	border-radius: 50%;
+	border: 2px solid grey;
+	background-color: black;	
+}
+
+.bioIconCaps{
+	visibility: hidden;
+	opacity: 0;
+	transition-duration: 0.5s;
+}
+
+.backIcon{
+	position: absolute;
+	top: 20%;
+	right: 3%;
+	color: white;
+}
+
+#writeUp{
+	top: 20%;
+	left: 3%;
+}
+
+#bioData{
+	top: 40%;
+	left: 3%;
+}
+
+#skills{
+	top: 60%;
+	left: 3%;
+}
+
+#portfolio{
+	top: 80%;
+	left: 3%;
+}
+
+.aboutMeContent{
+	color: white;
+	position: absolute;
+	top: 10%;
+	left: 15%;
+	width: 70vw;
+}
+
+.aboutMeCard{
+	background-color: rgba(50,50,50, 0.8);
+}
+
+#portfolioCarousel{
+	height: 80vh;
+}
+
+.portfolioImg{
+	width: 100%;
+	height: auto;
+	max-width: 400px;
+}
+
+h4{
+	font-size: 20px;
+}
+
+.mePar{
+	font-size: 12px;
+}
+
+.strWkns{
+	font-size: 12px;
+	margin-bottom: 5px;
+}
+
+.strWknsDet{
+	font-size: 8px;
+}
+
+.resumeTitles{
+	font-size: 12px;
+}
+
+.resumeDet{
+	font-size: 8px;
+}
+
+.progLangText{
+	font-size: 12px;
+}
+
+.skillTypes{
+	font-size: 10px;
+}
+
+@media only screen and (max-width: 600px){
+	.bioDivs{
+		width: 300px;
+	}
+
+	.bioIcons{
+		height: 40px; 
+		width: 40px;
+		font-size: 25px;
+	}
+
+	.bioIconCaps{
+		font-size: 25px;
+	}
+
+	.title{
+		font-size: 17px;
+	}
+
+	.subTitle{
+		font-size: 12px;
+	}
+
+	.socLinks{
+		font-size: 7px;
+	}
+
+	.myPic{
+		height: 75px;
+		width: 75px;
+	}
+
+	.carousel-control .glyphicon-chevron-right, .carousel-control .icon-next{
+		right: 0;
+	}
+	.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev{
+		left: 0;
+	}
+
+	
+}
+
+@media only screen and (min-width: 601px){
+	.bioDivs{
+		width: 300px;
+	}
+
+	.bioIcons{
+		height: 60px; 
+		width: 60px;
+		font-size: 40px;
+	}
+
+	.bioIconCaps{
+		font-size: 25px;
+	}
+
+	.title{
+		font-size: 40px;
+	}
+
+	.subTitle{
+		font-size: 20px;
+	}
+
+	.socLinks{
+		font-size: 10px;
+	}
+
+	.myPic{
+		height: 150px;
+		width: 150px;
+	}
+
+	.mePar{
+		font-size: 18px;
+	}
+
+	.strWkns{
+		font-size: 18px;
+		margin-bottom: 15px;
+	}
+
+	.strWknsDet{
+		font-size: 14px;
+	}
+
+	.resumeTitles{
+		font-size: 18px;
+		margin-bottom: 20px;
+	}
+
+	#workExpDiv{
+		/*margin-top: 18px;*/
+	}
+
+	.resumeDet{
+		font-size: 14px;
+	}
+
+	.progLangText{
+		font-size: 20px;
+	}
+
+	.skillTypes{
+		font-size: 14px;
+		margin-top: 10px;
+	}
+
+	h4{
+		font-size: 20px;
+		margin-bottom: 30px;
+	}
+
+	.portDets{
+		font-size: 14px;
+		margin-top: 20px;
+	}
 }
